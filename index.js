@@ -2,16 +2,18 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate = function(nums) {
-    for(let i = 0; i < nums.length; i++) {
-        let num = nums[i]
-        for (let j = i + 1; j < nums.length; j++) {
-            if (num === nums[j]) {
-                return true;
-            }
-        }
-    }
-    return false;
-};
+function containsDuplicate(nums) {
+  if (!Array.isArray(nums)) {
+    throw new TypeError("Input must be an array");
+  }
+  const seen = new Set(nums);
+
+  console.log(seen.size);
+
+  if (nums.length !== seen.size) {
+    return true;
+  }
+  return false;
+}
 
 module.exports = containsDuplicate;
