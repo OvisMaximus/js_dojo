@@ -1,5 +1,12 @@
 const containsDuplicate = require('../index');
 
+describe('getRequired', () => {
+    test('bla', () => {
+        const player = [3, 0];
+        const
+    });
+});
+
 describe('containsDuplicate', () => {
     test('should return true when there are duplicates', () => {
         const nums = [1, 2, 3, 1];
