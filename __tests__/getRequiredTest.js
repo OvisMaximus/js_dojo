@@ -12,4 +12,10 @@ describe("getRequired", () => {
     const enemy = [2, 1];
     expect(getRequired(player, enemy)).toBe("Auto-win");
   });
+
+  test("should return 'Auto-loose' when the enemy has at least 6 more power (including modifiers) than the player", () =>  {
+    const player = [2, 1];
+    const enemy = [9, 0];
+    expect(getRequired(player, enemy)).toBe("Auto-loose");
+  })
 });
