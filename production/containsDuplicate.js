@@ -16,8 +16,4 @@ function containsDuplicate(nums) {
   return false;
 }
 
-function getRequired(player, enemy) {
-    // your code here
-}
-
-module.exports = [containsDuplicate, getRequired];
+module.exports = containsDuplicate;
