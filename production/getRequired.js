@@ -3,13 +3,31 @@ function getRequired(player, enemy) {
     return arrayOfInt[0] + arrayOfInt[1];
   }
   let playerAdvantage = sum(player) - sum(enemy);
-  return playerAdvantage === 0 ? "Random"
-    : playerAdvantage < 0 ? 
-      (playerAdvantage<-5 ? "Auto-lose" 
-      : `(1..${playerAdvantage + 5})`)
-    : (playerAdvantage < 6 ? 
-      `(${7 - playerAdvantage}..6)`
-      : "Auto-win");
+
+  function copeWithPlayerAdvantage() {
+    if (playerAdvantage >= 6) {
+      return "Auto-win";
+    } else {
+      return `(${7 - playerAdvantage}..6)`;
+    }
+  }
+
+  function copeWithEnemyAdvantage() {
+    if (playerAdvantage === -5) {
+      return "Pray for a tie!"
+    } else if (playerAdvantage <= -6) {
+      return "Auto-lose";
+    } else {
+      return `(1..${playerAdvantage + 5})`;
+    }
+  }
+
+  if (playerAdvantage === 0) {
+    return "Random";
+  } else if (playerAdvantage < 0) {
+    return copeWithEnemyAdvantage();
+  } else
+    return copeWithPlayerAdvantage();
 
 }
 
