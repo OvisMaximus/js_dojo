@@ -4,8 +4,12 @@ function getRequired(player, enemy) {
   }
   let playerAdvantage = sum(player) - sum(enemy);
   return playerAdvantage === 0 ? "Random"
-    : playerAdvantage < 0 ? "Auto-lose"
-    : (playerAdvantage < 6 ? `(${7 - playerAdvantage}..6)`:"Auto-win");
+    : playerAdvantage < 0 ? 
+      (playerAdvantage<-5 ? "Auto-lose" 
+      : `(1..${playerAdvantage + 5})`)
+    : (playerAdvantage < 6 ? 
+      `(${7 - playerAdvantage}..6)`
+      : "Auto-win");
 
 }
 

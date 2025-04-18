@@ -30,4 +30,10 @@ describe("getRequired", () => {
     const enemy = [6, 0];
     expect(getRequired(player, enemy)).toBe("(1..3)");
   });
+
+  test("should return 'Pray for a tie!' to tell the player he still can win if he throws a 6 and the enemy throws a 1", () => {
+    const player = [7, 2];
+    const enemy = [6, 8];
+    expect(getRequired(player, enemy)).toBe("Pray for a tie!");
+  });
 });
