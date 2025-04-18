@@ -24,4 +24,10 @@ describe("getRequired", () => {
     const enemy = [2, 2];
     expect(getRequired(player, enemy)).toBe("(5..6)");
   });
+
+  test("should return '(1..3)' to tell the player he still can win if the enemy throws 1..3", () => {
+    const player = [4, 0];
+    const enemy = [6, 0];
+    expect(getRequired(player, enemy)).toBe("(1..3)");
+  });
 });
