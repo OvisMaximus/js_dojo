@@ -19,5 +19,9 @@ describe("getRequired", () => {
     expect(getRequired(player, enemy)).toBe("Auto-lose");
   });
 
-  
+  test("should return '(5..6)' when the enemy can not win anymore if the player rolls a 5 or 6", () => {
+    const player = [6, 0];
+    const enemy = [2, 2];
+    expect(getRequired(player, enemy)).toBe("(5..6)");
+  });
 });
