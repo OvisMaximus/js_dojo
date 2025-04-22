@@ -1,15 +1,12 @@
 const fill_gaps = require("../production/fillTheGaps");
 
-describe("fill_gaps", () => {
-    test("should return [1, 1, 1] when the input is [1, null, 1]", () => {
-        const input = [1, null, 1];
-        const expected = [1, 1, 1];
-        expect(fill_gaps(input)).toEqual(expected);
-    });
-
-    test("should return [1, 1, 1, 1, 1] when the input is [1, null, null, null, 1]", () => {
-        const input = [1, null, null, null, 1];
-        const expected = [1, 1, 1, 1, 1];
+describe.each`
+input | expected
+${[1, null, 1]} | ${[1, 1, 1]}
+${[1, null, null, null, 1]} | ${[1, 1, 1, 1, 1]}
+${[1, null, 1, 2, null, 2]} | ${[1, 1, 1, 2, 2, 2]}
+`("fill_gaps($input) should return $expected", ({ input, expected }) => {
+    test("", () => {
         expect(fill_gaps(input)).toEqual(expected);
     });
 });
