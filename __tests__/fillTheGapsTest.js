@@ -6,4 +6,10 @@ describe("fill_gaps", () => {
         const expected = [1, 1, 1];
         expect(fill_gaps(input)).toEqual(expected);
     });
+
+    test("should return [1, 1, 1, 1, 1] when the input is [1, null, null, null, 1]", () => {
+        const input = [1, null, null, null, 1];
+        const expected = [1, 1, 1, 1, 1];
+        expect(fill_gaps(input)).toEqual(expected);
+    });
 });
