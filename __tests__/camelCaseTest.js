@@ -1,5 +1,8 @@
 // https://www.codewars.com/kata/58097ae96037b88f57000105
 // const Test = require('@codewars/test-compat');
+
+// Continue with Jing as driver and Laura as navigator
+
 const toCamelCase= require("../production/camelCase");
 
 describe("toCamelCase", () => {
