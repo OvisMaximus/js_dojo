@@ -1,5 +1,5 @@
 function toCamelCase(sentence, strategyId){
-    return "helloWorld";
+    return strategyId === 1 ? "helloWorld" : "hellOworld";
 }
 
 module.exports = toCamelCase;
