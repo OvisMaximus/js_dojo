@@ -1,10 +1,18 @@
 // https://www.codewars.com/kata/58097ae96037b88f57000105
-const Test = require('@codewars/test-compat');
+// const Test = require('@codewars/test-compat');
+const toCamelCase= require("../production/camelCase");
 
-describe("Basic Tests", function(){
-    it("It should works for basic tests", function(){
+describe("toCamelCase", () => {
+    test("should return helloWorld when using strategy 1", () => {
+        expect(toCamelCase("hello world",1)).toBe("helloWorld");
+    });
 
-        Test.assertSimilar(toCamelCase("hello world",1) , "helloWorld")
+    test("should return hellOworld when using strategy 2", () => {
+        expect(toCamelCase("hello world",2)).toBe("hellOworld");
+    });  
+   
+
+ //       Test.assertSimilar(toCamelCase("hello world",1) , "helloWorld")
 
 //        Test.assertSimilar(toCamelCase("hello world",2) , "hellOworld")
 
@@ -19,4 +27,3 @@ describe("Basic Tests", function(){
 //        Test.assertSimilar(toCamelCase("Each number plus one",3) , "eacHNumbeRPluSOne")
 
     })
-})
