@@ -18,13 +18,10 @@ describe("toCamelCase", () => {
         expect(toCamelCase("hello world",3)).toBe("hellOWorld");
     });
 
-//       Test.assertSimilar(toCamelCase("hello world",1) , "helloWorld")
-
-//        Test.assertSimilar(toCamelCase("hello world",2) , "hellOworld")
-
-//        Test.assertSimilar(toCamelCase("hello world",3) , "hellOWorld")
-
-//        Test.assertSimilar(toCamelCase("Hello world",1) , "helloWorld")
+    test("'Each number plus one' with strategy 1 should return eachNumberPlusOne", () => {
+        expect(toCamelCase("Each number plus one",1))
+            .toBe("eachNumberPlusOne");
+    });
 
 //        Test.assertSimilar(toCamelCase("Each number plus one",1) , "eachNumberPlusOne")
 
@@ -32,4 +29,4 @@ describe("toCamelCase", () => {
 
 //        Test.assertSimilar(toCamelCase("Each number plus one",3) , "eacHNumbeRPluSOne")
 
-    })
+})
