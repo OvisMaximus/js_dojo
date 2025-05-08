@@ -43,3 +43,33 @@ getRequired([1, 1], [6, 0]) // returns '(1..1)' as this would be the only outcom
 If the better case scenario for the player is to hope for a tie, then return "Pray for a tie!".
 
 getRequired([7, 2], [6, 8]) // returns "Pray for a tie!"
+
+# how to set up a CI pipeline at github? It's a JavaScript project and we plan to use Typescript in the future.
+
+## 🗒️ Answer
+
+To set up a Continuous Integration (CI) pipeline on GitHub for a JavaScript project, especially one planning to incorporate TypeScript, you can use GitHub Actions [[1](https://medium.com/@templum.dev/how-to-get-started-with-your-first-javascript-typescript-github-action-b60630a6a7cf)].
+
+Here are the basic steps:
+
+1.  Create a GitHub repository for your project [[2](https://dev.to/vishnusatheesh/how-to-set-up-a-cicd-pipeline-with-github-actions-for-automated-deployments-j39)].
+2.  In your repository, define a workflow file (usually in `.github/workflows/`) in YAML format [[2](https://dev.to/vishnusatheesh/how-to-set-up-a-cicd-pipeline-with-github-actions-for-automated-deployments-j39)].
+3.  This workflow will specify jobs and steps to run when certain events occur (e.g., a push to the repository) [[2](https://dev.to/vishnusatheesh/how-to-set-up-a-cicd-pipeline-with-github-actions-for-automated-deployments-j39)].
+4.  Common steps in the CI pipeline include:
+    * Checking out your code [[4](https://michaelzanggl.com/articles/github-actions-ci-setup/)].
+    * Setting up Node.js [[4](https://michaelzanggl.com/articles/github-actions-ci-setup/)].
+    * Installing project dependencies [[4](https://michaelzanggl.com/articles/github-actions-ci-setup/)].
+    * Running linters and formatters.
+    * Building the project. If you use or plan to use TypeScript, this step will involve compiling your `.ts` files using the `tsc` command [[6](https://stackoverflow.com/questions/14486134/typescript-continuous-integration/), [5](https://medium.com/@jeanycyang/js-in-pipeline-6-ci-cd-pipeline-1-99e0e991dd14)].
+    * Running tests [[4](https://michaelzanggl.com/articles/github-actions-ci-setup/)].
+
+This setup provides a foundation for automated checks and builds every time changes are pushed to your repository.
+
+## 🌐 Sources
+
+1.  medium.com - How to get started with your first JavaScript/TypeScript ... [[1](https://medium.com/@templum.dev/how-to-get-started-with-your-first-javascript-typescript-github-action-b60630a6a7cf)]
+2.  dev.to - How to Set Up a CI/CD Pipeline with GitHub Actions for ... [[2](https://dev.to/vishnusatheesh/how-to-set-up-a-cicd-pipeline-with-github-actions-for-automated-deployments-j39)]
+3.  github.com - Create your first pipeline for a typescript project [[3](https://github.com/rondinif/pipeline-typescript)]
+4.  michaelzanggl.com - GitHub Actions: Setting up CI for a JS/TS/Node project [[4](https://michaelzanggl.com/articles/github-actions-ci-setup/)]
+5.  medium.com - JS in Pipeline (6): CI/CD pipeline (1) | by Jean YC Yang [[5](https://medium.com/@jeanycyang/js-in-pipeline-6-ci-cd-pipeline-1-99e0e991dd14)]
+6.  stackoverflow.com - TypeScript Continuous Integration - javascript [[6](https://stackoverflow.com/questions/14486134/typescript-continuous-integration/)]
