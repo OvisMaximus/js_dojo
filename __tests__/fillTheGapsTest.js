@@ -1,4 +1,4 @@
-const fill_gaps = require("../production/fillTheGaps");
+const fill_gaps = require("../src/fillTheGaps");
 
 describe.each`
     input | expected

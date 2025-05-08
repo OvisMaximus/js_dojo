@@ -1,4 +1,4 @@
-const containsDuplicate = require("../production/containsDuplicate");
+const containsDuplicate = require("../src/containsDuplicate");
 
 describe("containsDuplicate", () => {
   test("should return true when there are duplicates", () => {

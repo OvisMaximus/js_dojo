@@ -3,7 +3,7 @@
 
 // Continue with Jing as driver and Laura as navigator
 
-const toCamelCase= require("../production/camelCase");
+const toCamelCase= require("../src/camelCase");
 
 describe("toCamelCase", () => {
     test("should return helloWorld when using strategy 1", () => {

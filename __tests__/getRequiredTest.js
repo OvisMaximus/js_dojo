@@ -1,4 +1,4 @@
-const getRequired = require("../production/getRequired");
+const getRequired = require("../src/getRequired");
 
 describe("getRequired", () => {
   test("should return 'Random' when the player and enemy sum up to the same integer", () => {
